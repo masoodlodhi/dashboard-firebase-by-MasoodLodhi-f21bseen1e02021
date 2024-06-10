@@ -1,0 +1,479 @@
+1
+
+
+
+When to stop testing? (1/3)
+• On a small or a local scale, we can ask: “When to
+stop testing for a specific test activity?”
+• On a global scale, we can ask: “When to stop all the
+major test activities?” Because the testing phase is
+usually the last major development phase before
+product release,
+• this question is equivalent to: “When to stop testing and
+release the product?”
+
+When to stop testing? (2/3)
+Decision to stop testing can usually be made in two general
+forms:
+1.
+Resource-based criteria, where decision is made based on
+resource consumptions. The most commonly used such
+stopping criteria are:
+- “Stop when you run out of time.”
+- “Stop when you run out of money.”
+• Such criteria may be employed if product schedule or cost
+are the dominant concerns for the product in question.
+
+When to stop testing? (3/3)
+2. Activity-based criteria
+- “Stop when you complete planned test
+activities.”
+• This criterion implicitly assumes the effectiveness of
+the test activities in ensuring the quality of the
+software product.
+• As a rule of thumb: “Products should not be released
+unless every component has been tested.”
+
+
+
+
+2
+Usage-Based Statistical Testing (UBST)
+and Operational Profiles (OPs) (1/5)
+• Actual customer usage of software products can be viewed as a
+form of usage-based testing.
+• If the actual usage, or anticipated usage for a new product, can be
+captured and used in testing, product reliability could be most
+directly assured.
+• In Usage-Based Statistical Testing (UBST), the overall testing environment resembles the actual operational environment for the software product in the field, and the overall testing sequence, as represented by the orderly execution of specific test cases in a test suite, resembles the usage scenarios, sequences, and patterns of actual software usage by the target customers.
+
+Usage-Based Statistical Testing (UBST)
+and Operational Profiles (OPs) (2/5)
+• The massive number of customers and diverse usage patterns cannot be captured in an exhaustive set of test cases, statistical sampling is needed, thus the term “statistical” in the descriptive title of this strategy. • The term “random testing” and “usage-based random testing” can also be used. The term “usage-based statistical testing” is used avoid the confusion between random testing and “ad hoc” testing, where no systematic strategy is implied in “ad hoc” testing.
+
+Usage-Based Statistical Testing (UBST) and
+Operational Profiles (OPs) (3/5)
+• “Operational Profiles” or OPs are models that capture the actual usage information. Different OPs are associated with different testing techniques for UBST. Two primary types of usage models or OPs are: 1. Flat OPs, or Musa OPs which present commonly used operations in a list, a histogram, or a tree-structure, together with the associated occurrence probabilities. The main advantage of the flat OP is its simplicity, both in model construction and usage.
+
+Usage-Based Statistical Testing (UBST) and
+Operational Profiles (OPs) (4/5)
+2. Markov chain based usage models, or Markov OPs which present commonly used operational units in Markov chains, where the state transition probabilities are history independent. Complete operations can be constructed by linking various states together following the state transitions, and the probability for the whole path is the product of its individual transition probabilities. Markov models based on state transitions can generally capture navigation patterns better than flat OPs, but are more expensive to maintain and to use.
+
+Usage-Based Statistical Testing (UBST)
+and Operational Profiles (OPs) (5/5)
+• Usage-Based Statistical Testing (UBST) is generally applicable to the final stage of testing, typically referred to as acceptance testing right before product release, so that stopping testing is equivalent to releasing the product.
+
+
+
+3
+Coverage and coverage-based testing(CBT) (1/5)• Most traditional testing techniques, either functionaltesting (BBT) or structural testing (WBT), use variousforms of test coverage as the stopping criteria.• The simplest such criterion is in the form of completingvarious checklists, such as a checklist of major functionsbased on product specifications when BBT is used, or achecklist of all the product components or all thestatements when WBT is used. Testing can beperformed until all the items on the respective checklisthave been checked off or exhausted.
+Coverage and coverage-based testing(CBT) (2/5)For most of the systematic testing techniques, some formal modelsare used. Some specific examples of such models and relatedcoverage include:1.Formally defined partitions can be used as the basis for varioustesting techniques, which are similar to checklists but ensure:• mutual exclusion of checklist items to avoid unnecessary repetition,• complete coverage defined accordingly.2.A specialized type of partitions, input domain partitions intosub-domains, can also be used to test these sub-domains andrelated boundary conditions.
+Coverage and coverage-based testing(CBT) (3/5)3. Various programming or functional states can bedefined and linked together to form finite-statemachines (FSMs) to model the system as the basis forvarious testing techniques to ensure state coverageand coverage of related state transitions andexecution sequences.4. FSMs can also be extended to analyze and coverexecution paths and data dependencies throughvarious testing techniques.Coverage and coverage-based testing(CBT) (4/5)The generic steps and major sub-activities for CBT model construction andtest preparation are described below:1.Defining the model: These models are often represented by somegraphs, with individual nodes representing the basic model elementsand links representing the interconnections. Some additionalinformation may be attached to the graph as link or node properties(commonly referred to as weights in graph theory).2.Checking individual model elements to make sure the individualelements, such as links, nodes, and related properties, have beentested individually, typically in isolation, prior to testing using thewhole model. This step also represents the self-checking of themodel, to make sure that the model captures what is to be tested.Coverage and coverage-based testing(CBT) (5/5)3.Defining coverage criteria: Coverage criteria used to coverthe overall execution and interactions. For example, withthe partition-based testing, we might want to cover theboundaries in addition to individual partitions; and forFSM-based testing, we might want to cover statetransition sequences and execution paths.4.Derive test cases: Once the coverage criteria are defined,we can design our test cases to achieve them. The testcases need to be sensitized, that is, with its input valuesselected to realize specific tests, anticipated resultsdefined, and ways to check the outcomes planned aheadof time.
+
+
+
+
+4
+
+Comparing CBT with UBST (1/5)
+
+To summarize, the key questions that distinguish coverage-based
+testing (CBT) from usage-based statistical testing (UBST) are the
+“perspective” question and the related stopping criteria:
+1.
+Perspective: UBST views the objects of testing from a user’s
+perspective and focuses on the usage scenarios, sequences,
+patterns, and associated frequencies or probabilities; while CBT
+views the objects from a developer’s perspective and focuses
+covering functional or implementation units and related
+entities.
+2.
+Stopping criteria: UBST use product reliability goals as the exit
+criterion; and CBT using coverage goals - surrogates or
+approximations of reliability goals - as the exit criterion.
+
+Comparing CBT with UBST (2/5)
+
+3.
+Objects: Although the objects tested may overlap, CBT is
+generally used to test and cover small objects, such as
+small software products, small units of large software
+products, or large systems at a high level of abstraction,
+such major functions or components; while UBST is
+generally more suitable for large software systems as a
+whole.
+4.
+Verification vs. validation: Although both CBT and UBST
+can be used for both verification test and validation test,
+UBST is more likely to be used for validation test because
+of their relationship to customers and users.
+
+Comparing CBT with UBST (3/5)
+
+5.
+Timeline: For large software systems, CBT is often used in early
+sub-phases of testing, such as unit and component testing,
+while UBST is often used in late sub-phases of testing, such as
+system and acceptance testing.
+6.
+Defect detection: In UBST, failures that are more likely to be
+experienced by users are also more likely to be observed in
+testing, leading to corresponding faults being detected and
+removed for reliability improvement. In CBT, failures are more
+closely related to things tested, which may lead to effective
+fault removal but may not be directly linked to improved
+reliability due to different exposure ratios for software faults.
+
+Comparing CBT with UBST (4/5)
+
+7. Testing environment: UBST uses testing environment
+similar to that for in-field operation at customer
+installations; while CBT uses environment specifically
+set up for testing.
+8. Techniques: Various techniques can be used to build
+models and generate test cases to perform
+systematic CBT. When these models are augmented
+with usage information, typically as the probabilities
+associated with checklist items, partitions, states, and
+state transitions, they can be used as models for
+UBST also.
+
+Comparing CBT with UBST (5/5)
+
+9. Customer and user roles: UBST models are
+constructed with extensive customer and user
+input; while CBT models are usually constructed
+without active customer or user input. UBST is
+also more compatible with the customer and user
+focus in today’s competitive market.
+10. Tester: Dedicated professional testers typically
+perform UBST; while CBT can be performed by
+either professional testers or by developers
+themselves.
+
+
+
+
+
+
+5
+Test Activities,
+Management, And
+Automation
+
+TEST PLANNING AND PREPARATION
+Test planning: Goals, strategies, and
+techniques (1/4)
+
+The high-level task for test planning is to set goals and to determine a
+general testing strategy.
+Overall environment needs to be considered because the environmental
+constraints imposed on testing also affect the choice of testing strategies.
+• In most of the testing we focus on the correctness aspect of quality. If
+the software is complete or nearly complete, then the above correctness-
+centered quality goals can be directly translated into reliability goals,
+which, in turn, requires us to use usage-based statistical testing.
+
+Test planning: Goals, strategies, and
+techniques (2/4)
+
+• Sometimes, these quality goals can be translated
+indirectly into coverage goals, which can be
+achieved by black-box testing for the whole system.
+• However, if only individual units and pieces are
+available, we might choose to focus on the
+implementation details and perform coverage-
+based white-box testing.
+
+Test planning: Goals, strategies, and
+techniques (3/4)
+
+1.In overall testing strategy the following decisions are made:
+Overall objectives and goals, which can be refined into
+specific goals for specific testing. Some specific goals
+include reliability for usage-based statistical testing or
+coverage for various traditional testing techniques.
+2.
+Objects to be tested and the specific focus: Functional
+testing views the software product as a black-box and
+focuses on testing the external functional behavior; while
+structural testing views the software product or
+component as a (transparent) white-box and focuses on
+testing the internal implementation details.
+
+Test planning: Goals, strategies, and
+techniques (4/4)
+
+• Simple models based on checklists and partitions
+generally require less resources and prior knowledge by
+the testing staff, while more complex formal models
+and related testing techniques may require more
+resources and expertise.
+• Different models and techniques are also associated
+with
+different
+effectiveness
+levels
+or
+different
+applicability to different types of problems and
+situations. Consequently, appropriate testing models
+and related techniques can be selected to optimize
+some form of cost-benefit measure.
+
+
+
+
+
+
+
+6
+
+Testing models and test cases (1/4)
+1.
+Information source identification and data collection: The
+information and data are generally affected by both what
+is required by specific models and what is available in the
+project environment. For example, in usage-based
+statistical testing, information about actual in-field or
+anticipated usage by target customers needs to be
+gathered to construct operational profiles as the basis of
+testing; while in white-box unit testing, the tested unit
+provides the information source which can be analyzed to
+construct our testing models.
+
+Testing models and test cases (2/4)
+2. Analysis and initial model construction: The
+information and data collected above are
+analyzed to construct testing models. Expertise
+and
+familiarity
+with
+the
+specific
+testing
+techniques and models are required for people
+who perform this task. This step is typically the
+hardest to automate because of the human
+intelligence and expertise required.
+
+Testing models and test cases (3/4)
+3. Model validation and incremental improvement:
+This is an important step, particularly for large
+objects or for functions or usages associated with
+external customers. Iterative procedure might be
+necessary to fix inaccuracies and other problems
+found in the initial model or early versions of the
+candidate models.
+
+Testing models and test cases (4/4)
+Once the testing models have been constructed and
+validated, they can be used to generate test cases, which
+can then be executed by following some planned test
+procedure. First, we need to define and distinguish the
+static test cases and the dynamic test runs, as follows:
+• A test case is a collection of entities and related
+information that allows a test to be executed or a test
+run to be performed.
+• A test run, is a dynamic unit of specific test activities in
+the overall testing sequence on a selected testing
+object.
+
+
+
+
+
+
+
+
+7
+
+Test suite preparation and management (1/7)
+• The collection of individual test cases that will be run in a test sequence until
+some stopping criteria are satisfied is called a test suite.
+• Test suite preparation involves the construction and allocation of individual test
+cases in some systematic way based on the specific testing techniques used.
+• For example, when usage-based statistical testing is planned, the test case
+allocation will be determined by the operational profiles (OPs) constructed as the
+testing models, in proportion to individual usage probabilities.
+• Similarly, when coverage-based testing is planned, the specific coverage criteria
+would dictate the allocation of test cases.
+• In control flow testing not involving loops, the exact number of test cases is
+determined by the number of paths for all-path coverage.
+
+Test suite preparation and management (2/7)
+• Another way to obtain a test suite is through reuse
+of test cases for earlier versions of the same
+product. This kind of testing is commonly referred
+to as regression testing.
+• It ensures that common functionalities are still
+supported satisfactorily in addition to satisfactory
+performance of new functionalities.
+
+Test suite preparation and management (3/7)
+• In general, all the test cases should form an integrated suite,
+regardless of their origins, how they are derived, and what
+models are used to derive them. Sometimes, the test suite
+may evolve over time and its formation may overlap with
+the actual testing.
+• In some testing techniques, test cases can be constructed
+dynamically, or “on-the-fly”, during test execution. But even
+for such testing, some planning of the test cases and test
+suite is still necessary, at least to determine the specific
+method for dynamic test case construction and the precise
+stopping criteria.
+
+Test suite preparation and management (4/7)
+• Test cases cost time, effort, and expertise to be
+obtained, and are too valuable to be thrown away.
+It is worthwhile to spend some addition effort and
+resource to save them, organize them, and manage
+them as a test suite for easy reuse in the future.
+• Test suite management includes managing the
+collection of both the existing test cases and the
+newly constructed ones. At a minimum, some
+consistent database for the test suite needs to be
+kept and shared by people who are working on
+similar areas.
+
+Test suite preparation and management (5/7)
+• Some personnel information can also be kept in the test
+suite, such as the testers who designed specific test
+cases, to better supported future use of this test suite.
+The information contained in the test suite constitutes
+an indexed database with important information about
+individual test cases in the test suite, as well as pointers
+to actual test cases.
+• The actual test cases, in turn, contains more detailed
+information about the exact scenario, test input,
+expected output and behavior, etc.
+
+Test suite preparation and management (6/7)
+• There are many ways to organize the test suite or test suites.
+The most common way is to organize them by sub-phases,
+because of the different objects, objectives, concerns,
+perspectives, priorities, and the testing techniques used.
+Various attributes can be used to describe, classify, and
+organize individual test cases in the suite.
+• One concrete example is the use of the following attributes
+for an IBM product in its system testing phase:
+• sc - scenario class
+• sn - scenario number
+• vn - variation number with a particular scenario
+
+Test suite preparation and management (7/7)
+• The scenario class sc corresponds to high-level functional areas or
+groups of functions.
+• Within each sc, the scenario number sn, and the variation number vn
+within each sn, form a three-layer hierarchical organization of test cases
+in the suite.
+• In addition, sn and vn are generally ordered in rough correspondence to
+the expected execution order, ranging from 1 to 99, with consecutive
+numbers used up to a point and then skipping to 99 to indicate some
+ad-hoc test cases - those do not fall into some systematic sequence.
+Therefore, less than 99 scenarios or variations within scenarios are
+allowed, which was more than adequate for the product tested.
+
+
+
+
+
+
+
+
+
+8
+Preparation of test procedure (1/7)
+• In addition to preparation of individual test cases and
+the overall test suite, the test procedure also needs to
+be prepared for effective testing.
+• The basic question is the sequencing of the individual
+test cases and the switch-over from one test run to
+another. Several concerns affect the specific test
+procedure to be used, including:
+1.
+Dependencies among individual test cases. Some test cases
+can only be run after others because one is used to set up
+another. This is particularly true for systems that operate
+continuously, where the later test run may need to start at
+a state set up by the earlier one.
+
+Preparation of test procedure (2/7)
+2. Defect detection related sequencing. Many
+problems can only be effectively detected after
+others have been discovered and fixed. For
+example, integration of several components and
+related testing typically focus on interface and
+interaction problems, which can be masked by
+problems in individual components. Therefore,
+these components need to be individually tested
+before integration testing starts.
+
+Preparation of test procedure (3/7)
+3.
+Sequences to avoid accidents. For some systems, possibly severe
+problems and damages may incur during testing if certain areas were
+not checked through related test runs prior to the current test run.
+For example, in embedded software for safety critical systems, one
+does not want to start testing safety features before testing other
+related functions first. This can be considered as a special case of the
+problem or defect related sequencing where there is a very strong
+economical incentive for preferring certain sequencing to others.
+
+Preparation of test procedure (4/7)
+4.
+Problem diagnosis related sequencing. Some execution
+problems observed during testing may involve complicated
+scenarios and many possible sources of problems. Under this
+situation, related test runs focused on a single aspect or limited
+areas can be used to help with the problem diagnosis.
+Better yet, if such complicated problems are expected, we should
+run related simpler test cases first to eliminate certain possibilities
+and narrow down the problem areas. Therefore, one natural
+sequence for test case execution commonly used in practical testing
+procedures is to progress from simple and easy ones to complicated
+and difficult ones. The same idea has been used in defining
+coverage hierarchies.
+
+Preparation of test procedure (5/7)
+5. Natural grouping of test cases, such as by functional
+and structural areas or by usage frequencies, can also
+be used for test sequencing and to manage parallel
+testing.
+However, among areas where no such order exists, or
+when the incentive for following a certain order is not
+strong, we can carry out testing for them in parallel to
+speed up the testing process. In fact, this is what
+people do all the time for large-scale software testing,
+where parallelism and interleaving are common.
+
+Preparation of test procedure (6/7)
+• The key to test run transition in the test procedure preparation is
+to make sure that the next test run can start right after the
+current one is finished for each software installment.
+• This consideration may place some additional requirements on
+individual test cases, either requiring them to leave the system in the
+same initial condition or in some specified final condition.
+• In fact, the initial and final states of specific test cases can also be used
+to group individual test cases in the test suite. This is similar to the
+grouping of test cases when system configuration and environmental
+setup are considered in defining the operational mode in usage-based
+testing using Musa’s operational profiles (Musa, 1998).
+
+Preparation of test procedure (7/7)
+• When test cases are derived dynamically, test
+procedure would naturally involve much more
+dynamic elements.
+• In this case, not only the execution but also the
+generation of dynamic test cases is affected by the
+dependency, effectiveness and efficiency concerns.
+
+
+
+
+
+
+
+
+
+
